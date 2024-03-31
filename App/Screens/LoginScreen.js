@@ -55,7 +55,7 @@ export default function LoginScreen() {
         <Text style={{textAlign:'center',
     fontSize:20,marginTop:20,
     color:Colors.LIGHT_PRIMARY,
-    fontFamily:'outfit'}}>Your Ultimate Career Guide</Text>
+    fontFamily:'outfit'}}>Level Up Your Career Game</Text>
        
         <TouchableOpacity
         onPress={onPress}
