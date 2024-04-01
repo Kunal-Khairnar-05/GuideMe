@@ -37,24 +37,6 @@ export default function Header() {
         </View>
     </View>
 
-<View style={{backgroundColor:Colors.WHITE,paddingLeft:20,
-
-paddingRight:5,
-borderRadius:99,
-marginTop:25,
-
-display:'flex',flexDirection:'row',justifyContent:'space-between'}}>
-
-<TextInput placeholder='Search Career Paths ' style={{fontFamily:'outfit',
-fontSize:18}}/>
-<TouchableOpacity>
-<Ionicons name="search-circle-sharp" size={50} color={Colors.PRIMARY} />
-</TouchableOpacity>
-
-</View>
-
-
-
 
     </View>
     )
