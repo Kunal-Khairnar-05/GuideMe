@@ -8,6 +8,8 @@ import ChatScreen from '../Components/AiChatbot';
 import DetailSection from '../Components/CourseDetailScreen/DetailSection';
 import StripeApp from '../src/StripeApp';
 import Quiz from '../Components/Quiz';
+import { S } from '@expo/html-elements';
+import GuideScreen from '../Screens/GuideScreen';
 
 
 
@@ -23,7 +25,7 @@ export default function HomeScreenNavigation() {
 <Stack.Screen name='Chat' component={ChatScreen}/>
 <Stack.Screen name='Stripe' component={StripeApp}/>
 <Stack.Screen name='Quiz' component={Quiz}/>
-
+<Stack.Screen name='Guide' component={GuideScreen}/>
     </Stack.Navigator>
   )
 }

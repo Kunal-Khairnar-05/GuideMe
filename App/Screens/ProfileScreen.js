@@ -21,7 +21,7 @@ export default function ProfileScreen() {
 
 
 
-    <View>
+    <View style={{marginBottom:20}}>
 
     <ScrollView>
 
@@ -30,6 +30,8 @@ export default function ProfileScreen() {
 
 
 </View>
+
+
 <View style={{alignItems:'center'}}>
 <Image source={{uri:user?.imageUrl ? user?.imageUrl:'../../assets/images/avatar.png'}} style={{width:140,height:140,borderRadius:100,
   marginTop:-70}} />
@@ -44,6 +46,25 @@ export default function ProfileScreen() {
 <Text style={{fontSize:18,fontFamily:'outfit-medium'}}>User</Text>
   </View>
 </View>
+
+
+<View style={{padding:10,backgroundColor:Colors.WHITE,margin:10,borderRadius:15, alignItems:'center'}}>
+
+<View style={{backgroundColor:Colors.LIGHT_PRIMARY,borderRadius:10,width:90, marginTop:10,paddingHorizontal:10,marginLeft:-190}}>
+<Text style={{fontSize:18,fontFamily:'outfit-medium'}}>Beta ✨</Text>
+  </View>
+
+    
+    <View style={{alignItems:'center'}}>
+    <Text style={{fontSize:18,fontFamily:'outfit-medium'}}>Sign In As GUIDE</Text>
+    <Button title="Sign In" color={Colors.PRIMARY} onPress={()=>{navigator.navigate('Guide')}}/>
+    </View>
+
+  </View>
+
+
+
+
 <View style={{padding:20,margin:10,borderRadius:15,alignItems:'center'}}>
 <Button title="Sign Out" color='#d60826' onPress={()=>{signOut()}}/>
 </View>

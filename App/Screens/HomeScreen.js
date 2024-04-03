@@ -9,6 +9,8 @@ import FadeInOutText from '../Components/FadeInOutText'
 import { useNavigation } from '@react-navigation/native'
 import { ScrollView } from 'react-native'
 import QuizScreen from '../Components/Quiz'
+
+
 export default function HomeScreen() {
   const navigation=useNavigation();
   
