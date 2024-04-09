@@ -5,6 +5,8 @@ import { useNavigation } from "@react-navigation/native";
 import Colors from "../utils/Colors";
 import { useAppContext } from "../../AppContext";
 // import { text } from 'express';
+import { Feather } from '@expo/vector-icons';
+import { Image } from 'react-native';
 
 const AIChatScreen = ({ navigation }) => {
   const API_KEY = "AIzaSyCPcJP36fwFW-gudrz4B8gDgaA57qF11p0";
@@ -17,6 +19,7 @@ const AIChatScreen = ({ navigation }) => {
   const [extraActivity, setExtraActivity] = useState("");
   const [inputText, setInputText] = useState("");
   const { setMyTasks } = useAppContext();
+  const [send, setSend] = useState(false);
 
   const extractJSONOutput = (responseText) => {
     // Find the index where the JSON object starts
@@ -126,6 +129,7 @@ const AIChatScreen = ({ navigation }) => {
       console.error("Error calling API:", error);
     }
     setLoading(false);
+    setSend(false);
   };
 
   const renderItem = ({ item }) => (
@@ -155,34 +159,36 @@ const AIChatScreen = ({ navigation }) => {
         renderItem={renderItem}
         keyExtractor={(item, index) => index.toString()}
       />
+
+      {/* Loading image */}
+      {loading && (
+        <Image
+          source={require("../../assets/images/img1.jpeg")}
+          style={{width:250,height:250,borderRadius:99,marginLeft:30}}
+        />
+      )}
+
+
       <View style={{ flexDirection: "row", marginTop: 16 }}>
         <TextInput
-          style={{
-            flex: 1,
-            borderWidth: 1,
-            borderColor: "gray",
-            marginRight: 8,
-            padding: 8,
-          }}
+          style={{ backgroundColor: Colors.WHITE, padding: 10, borderRadius: 5, marginHorizontal:10, borderColor:Colors.BLACK,borderWidth:1, marginBottom:8, maxWidth: 300, flex: 1, justifyContent: 'space-between'}}
           placeholder="Name, Education, Skills, Extra Activity"
           value={inputText}
           onChangeText={(text) => setInputText(text)}
         />
 
-        <Button
-          title="Send"
-          onPress={() => {
+          <Feather name="send" size={30} style={{marginTop:10}} color="black" onPress={() => {
             const userMessage = inputText;
             // setMessages({inputText, sentBy: 'user'});
             callAPI(userMessage);
             // setMessages(prevMessages => [...prevMessages, { text: userMessage, sentBy: 'user' }]);
             setInputText("");
             setMyTasks(true);
-          }}
-        />
+            setSend(true);
+          }}/>
+
       </View>
-      {loading && <Text>Loading...</Text>}
-      {/* {error !== '' && <Text>Error: {error}</Text>} */}
+
     </View>
   );
 };

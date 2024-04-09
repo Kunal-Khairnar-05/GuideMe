@@ -123,7 +123,7 @@ marginTop:25,
 display:'flex',flexDirection:'row',justifyContent:'space-between'}}>
 
 <TextInput placeholder='Enter Career to take Quiz ... 'onChangeText={setTopic} style={{fontFamily:'outfit',
-fontSize:18, padding:10}}/>
+fontSize:18, padding:10 ,maxWidth: 300, flex: 1, justifyContent: 'space-between'}}/>
 
 <TouchableOpacity style={{paddingTop:10}}>
 {/* <FontAwesome name="send" size={30} color="black" onPress={handleGenerateQuiz} disabled={isLoading}/> */}

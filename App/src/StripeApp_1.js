@@ -7,7 +7,7 @@ import DetailSection from "../Components/CourseDetailScreen/DetailSection";
 import { useNavigation, useRoute } from "@react-navigation/native";
 import OptionItem from "../Components/CourseDetailScreen/OptionItem";
 import { useAppContext } from "../../AppContext";
-const API_URL = "http://192.168.0.100:3000";
+const API_URL = "http://192.168.20.243:3001";
 
 const StripeApp_1 = () => {
   const [email, setEmail] = useState("");

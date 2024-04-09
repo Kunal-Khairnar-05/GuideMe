@@ -11,7 +11,7 @@ import * as ImagePicker from 'expo-image-picker';
 
 export default function GuideScreen() {
 
-    const [courseName, setCourseName] = useState('');
+const [courseName, setCourseName] = useState('');
 const [instructorName, setInstructorName] = useState('');
 const [courseDetails, setCourseDetails] = useState('');
 const [salary, setSalary] = useState('');
@@ -243,14 +243,7 @@ if (bannerImage) {
         placeholder="Enter Instructor Name"
         style={styles1.textInput}
       />
-      <Text style={styles1.fieldLabel}>Course Details:</Text>
-      <TextInput
-        value={courseDetails}
-        onChangeText={setCourseDetails}
-        placeholder="Enter Course Details"
-        multiline={true}
-        style={styles1.textInput}
-      />
+   
       <Text style={styles1.fieldLabel}>Salary (Optional):</Text>
       <TextInput
         value={salary}
@@ -274,10 +267,7 @@ if (bannerImage) {
         keyboardType="numeric"
         style={styles1.textInput}
       />
-         <Text style={styles1.fieldLabel}>Course Banner:</Text>
-         <View style={{margin:10}}>
-    <Button title="Choose Image 📸"color={Colors.YELLOW} onPress={pickImage}/>
-    </View>
+        
       <Button title="Submit" onPress={handleSubmit} style={styles1.submitButton} />
     </View>
 
